@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="data.html" style="display: inline-block; color: white; margin-top: 30px; margin-left: 50px; text-decoration: none; border-bottom: 1px solid transparent;">Analysis and optimization</a>
+
+
+    <div class="container">
+        
+            <img src="bt.png" height="130px" width="200px" style="margin: 0%;" >
+    
+        <h1>Shoe Inventory</h1>
+        
+        <div class="form">
+            <div class="input-group">
+                <label for="article_number">Article Number:</label>
+                <input type="text" id="article_number" required>
+            </div>
+
+            <div class="input-group">
+                <label for="brand">Shoe Brand:</label>
+                <input type="text" id="brand" required>
+            </div>
+
+            <div class="input-group">
+                <label for="size">Shoe Size:</label>
+                <input type="text" id="size" required>
+            </div>
+
+            <div class="input-group">
+            
+                <label for="category">Shoe Category:</label>
+                <select id="category">
+                    <option value="" disabled selected>Select an option <div style="margin-left: 70px;" >&#9660;</div></option>
+                    <option value="Men">Men</option>
+                    <option value="Women">Women</option>
+                    <option value="Kids">Kids</option>
+                  
+                </select>
+             
+            </div>
+
+            <button id="check_availability">Check Availability</button>
+        </div>
+        <div class="result" id="result">
+            
+         
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

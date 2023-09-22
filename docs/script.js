@@ -1,0 +1,591 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    var shoeData = [
+        {
+            "article_number": "SN391",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 7, Shelf C",
+            "price": "Ksh 5940.51",
+            "quantity": 18,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN440",
+            "availability": 0,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 4, Shelf C",
+            "price": "Ksh 3108.21",
+            "quantity": 0,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN691",
+            "availability": 1,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 4, Shelf C",
+            "price": "Ksh 6829.39",
+            "quantity": 16,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN471",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 6, Shelf C",
+            "price": "Ksh 4695.78",
+            "quantity": 17,
+            "size": "UK 8"
+        },
+        {
+            "article_number": "SN440",
+            "availability": 0,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 4, Shelf C",
+            "price": "Ksh 3108.21",
+            "quantity": 0,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN946",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 8, Shelf A",
+            "price": "Ksh 5364.77",
+            "quantity": 17,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN196",
+            "availability": 1,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 7, Shelf B",
+            "price": "Ksh 4137.82",
+            "quantity": 15,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN988",
+            "availability": 1,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 10, Shelf B",
+            "price": "Ksh 3241.49",
+            "quantity": 4,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN165",
+            "availability": 1,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 6, Shelf B",
+            "price": "Ksh 4678.15",
+            "quantity": 7,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN232",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 5, Shelf B",
+            "price": "Ksh 3807.52",
+            "quantity": 16,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN303",
+            "availability": 1,
+            "brand": "Toughees",
+            "category": "Kids",
+            "location": "Aisle 3, Shelf B",
+            "price": "Ksh 7200.26",
+            "quantity": 1,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN820",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 8, Shelf A",
+            "price": "Ksh 3089.16",
+            "quantity": 5,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN341",
+            "availability": 1,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 8, Shelf B",
+            "price": "Ksh 3349.90",
+            "quantity": 5,
+            "size": "UK 10"
+        }
+        ,
+        {
+            "article_number": "SN391",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 7, Shelf C",
+            "price": "Ksh 5940.51",
+            "quantity": 18,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN658",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 7, Shelf B",
+            "price": "Ksh 7973.04",
+            "quantity": 14,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN989",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 10, Shelf C",
+            "price": "Ksh 4511.84",
+            "quantity": 2,
+            "size": "UK 8"
+        },
+        {
+            "article_number": "SN770",
+            "availability": 1,
+            "brand": "Toughees",
+            "category": "Kids",
+            "location": "Aisle 2, Shelf C",
+            "price": "Ksh 6052.50",
+            "quantity": 9,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN119",
+            "availability": 1,
+            "brand": "Toughees",
+            "category": "Kids",
+            "location": "Aisle 4, Shelf C",
+            "price": "Ksh 7927.46",
+            "quantity": 12,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN803",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 10, Shelf C",
+            "price": "Ksh 3152.86",
+            "quantity": 18,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN955",
+            "availability": 1,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 1, Shelf A",
+            "price": "Ksh 3910.53",
+            "quantity": 3,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN479",
+            "availability": 0,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 9, Shelf A",
+            "price": "Ksh 3553.27",
+            "quantity": 0,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN454",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 3, Shelf C",
+            "price": "Ksh 7901.37",
+            "quantity": 17,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN356",
+            "availability": 1,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 6, Shelf A",
+            "price": "Ksh 4104.78",
+            "quantity": 3,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN743",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 8, Shelf B",
+            "price": "Ksh 7386.37",
+            "quantity": 7,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN340",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 6, Shelf A",
+            "price": "Ksh 7013.56",
+            "quantity": 5,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN847",
+            "availability": 1,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 1, Shelf C",
+            "price": "Ksh 7838.99",
+            "quantity": 6,
+            "size": "UK 8"
+        },
+        {
+            "article_number": "SN646",
+            "availability": 1,
+            "brand": "Sketchers",
+            "category": "Men",
+            "location": "Aisle 9, Shelf C",
+            "price": "Ksh 4815.76",
+            "quantity": 12,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN844",
+            "availability": 1,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 4, Shelf C",
+            "price": "Ksh 5740.11",
+            "quantity": 14,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN822",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 2, Shelf A",
+            "price": "Ksh 4799.63",
+            "quantity": 12,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN868",
+            "availability": 0,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 1, Shelf C",
+            "price": "Ksh 3228.34",
+            "quantity": 0,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN596",
+            "availability": 1,
+            "brand": "Toughees",
+            "category": "Kids",
+            "location": "Aisle 5, Shelf B",
+            "price": "Ksh 6255.43",
+            "quantity": 9,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN278",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 6, Shelf C",
+            "price": "Ksh 3471.78",
+            "quantity": 19,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN782",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 3, Shelf B",
+            "price": "Ksh 3156.21",
+            "quantity": 17,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN342",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 10, Shelf B",
+            "price": "Ksh 3815.92",
+            "quantity": 7,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN846",
+            "availability": 1,
+            "brand": "Marie Clare",
+            "category": "Women",
+            "location": "Aisle 10, Shelf A",
+            "price": "Ksh 4039.98",
+            "quantity": 6,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN177",
+            "availability": 0,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 6, Shelf B",
+            "price": "Ksh 4084.28",
+            "quantity": 0,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN320",
+            "availability": 0,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 4, Shelf A",
+            "price": "Ksh 6908.76",
+            "quantity": 0,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN831",
+            "availability": 0,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 6, Shelf B",
+            "price": "Ksh 6960.28",
+            "quantity": 0,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN569",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 6, Shelf B",
+            "price": "Ksh 3434.61",
+            "quantity": 10,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN172",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 2, Shelf C",
+            "price": "Ksh 6722.17",
+            "quantity": 6,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN287",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 2, Shelf C",
+            "price": "Ksh 3924.96",
+            "quantity": 10,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN577",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 3, Shelf C",
+            "price": "Ksh 7402.59",
+            "quantity": 20,
+            "size": "UK 7"
+        },
+        {
+            "article_number": "SN703",
+            "availability": 1,
+            "brand": "Bubblegummers",
+            "category": "Kids",
+            "location": "Aisle 8, Shelf B",
+            "price": "Ksh 5978.68",
+            "quantity": 18,
+            "size": "UK 8"
+        },
+        {
+            "article_number": "SN746",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 2, Shelf B",
+            "price": "Ksh 4173.66",
+            "quantity": 3,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN826",
+            "availability": 1,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 10, Shelf B",
+            "price": "Ksh 3486.46",
+            "quantity": 15,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN776",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 5, Shelf C",
+            "price": "Ksh 5091.64",
+            "quantity": 17,
+            "size": "UK 9"
+        },
+        {
+            "article_number": "SN792",
+            "availability": 1,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 1, Shelf A",
+            "price": "Ksh 5927.98",
+            "quantity": 15,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN171",
+            "availability": 1,
+            "brand": "Power",
+            "category": "Women",
+            "location": "Aisle 2, Shelf B",
+            "price": "Ksh 4149.33",
+            "quantity": 7,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN780",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 7, Shelf B",
+            "price": "Ksh 7594.22",
+            "quantity": 8,
+            "size": "UK 10"
+        },
+        {
+            "article_number": "SN992",
+            "availability": 1,
+            "brand": "Executive",
+            "category": "Men",
+            "location": "Aisle 5, Shelf A",
+            "price": "Ksh 7273.35",
+            "quantity": 7,
+            "size": "UK 6"
+        },
+        {
+            "article_number": "SN758",
+            "availability": 1,
+            "brand": "Hushpuppy",
+            "category": "Men",
+            "location": "Aisle 10, Shelf A",
+            "price": "Ksh 7320.24",
+            "quantity": 13,
+            "size": "UK 8"
+        },
+        {
+            "article_number": "SN947",
+            "availability": 1,
+            "brand": "Toughees",
+            "category": "Kids",
+            "location": "Aisle 9, Shelf C",
+            "price": "Ksh 4247.91",
+            "quantity": 10,
+            "size": "UK 6"
+        }
+        
+    ];
+
+    
+    var articleNumberInput = document.getElementById("article_number");
+    var brandInput = document.getElementById("brand");
+    var sizeInput = document.getElementById("size");
+    var categorySelect = document.getElementById("category");
+    var resultContainer = document.getElementById("result");
+
+   
+    document.getElementById("check_availability").addEventListener("click", function () {
+      
+        var userInputArticleNumber = articleNumberInput.value;
+        var userInputBrand = brandInput.value;
+        var userInputSize = sizeInput.value;
+        var userInputCategory = categorySelect.value;
+
+       
+        if (
+            !userInputArticleNumber ||
+            !userInputBrand ||
+            !userInputSize ||
+            !userInputCategory
+        ) {
+            alert("Please provide all details.");
+            return; 
+        }
+
+     
+        var matchingShoe = shoeData.find(function (shoe) {
+            return (
+                shoe.article_number === userInputArticleNumber &&
+                shoe.brand === userInputBrand &&
+                shoe.size === userInputSize &&
+                shoe.category === userInputCategory
+            );
+        });
+
+        if (matchingShoe) {
+            if (matchingShoe.availability === 1) {
+             
+                var availabilityMessage = "Shoe is available";
+
+             
+                resultContainer.innerHTML = `
+                    <p>${availabilityMessage}</p>
+                    <p>Price: ${matchingShoe.price}</p>
+                    <p>Location: ${matchingShoe.location}</p>
+                    <p>Quantity: ${matchingShoe.quantity}</p>
+                `;
+            } else {
+              
+                var availabilityMessage = "Shoe is not available";
+
+                resultContainer.innerHTML = `
+                    <p>${availabilityMessage}</p>
+                    <p>Price: ${matchingShoe.price}</p>
+                `;
+            }
+        } else {
+           
+            resultContainer.innerHTML = "Shoe not found in inventory.";
+        }
+    });
+});
+
